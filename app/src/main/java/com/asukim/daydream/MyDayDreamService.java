@@ -1,12 +1,15 @@
 package com.asukim.daydream;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.CallLog;
 import android.service.dreams.DreamService;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -49,6 +52,8 @@ public class MyDayDreamService extends DreamService {
     }
 
 
+    @SuppressLint("NewApi")
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
